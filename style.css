@@ -250,7 +250,7 @@ nav .profile-area button {
 /* ===================== ASIDE & SIDEBAR ===================== */
 main {
   display: grid;
-  grid-template-columns: 16rem auto 30rem;
+  grid-template-columns: 16em auto 30rem;
   gap: 2rem;
   width: 96%;
   margin: 1rem auto 4rem;
@@ -260,7 +260,7 @@ main aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 88vh;
+  /* height: 88vh; */
 }
 
 /* will be shown only on mobile and tablets */
@@ -511,17 +511,27 @@ canvas#chart {
   padding: var(--card-padding);
 }
 
+.bottom-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.show-desktop {
+  display: none;
+}
+
 /* ==================== INVESTMENTS ================ */
-main section.right .investments {
+section.bottom-section .investments {
   background: var(--color-white);
   border-radius: var(--card-border-radius);
 }
 
-main section.right .investments img {
+section.bottom-section .investments img {
   width: 2.4rem;
 }
 
-main section.right .investments .header {
+section.bottom-section .investments .header,
+section.bottom-section .recent-transactions .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -529,13 +539,13 @@ main section.right .investments .header {
   padding-bottom: 0;
 }
 
-main section.right .investments .header a {
+section.bottom-section .investments .header a {
   display: flex;
   align-items: center;
   color: var(--color-primary);
 }
 
-main section.right .investments .investment {
+section.bottom-section .investments .investment {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -544,37 +554,34 @@ main section.right .investments .investment {
   transition: all 300ms ease;
 }
 
-main section.right .investments .investment:last-child {
+section.bottom-section .investments .investment:last-child {
   border: none;
 }
 
-main section.right .investments .investment:hover {
+section.bottom-section .investments .investment:hover {
   background: var(--color-light);
   cursor: pointer;
 }
 
 /* ==================== RECENT TRANSACTIONS ================ */
-main .recent-transactions {
-  margin-top: 2rem;
-}
 
-main .recent-transactions img {
+.recent-transactions img {
   width: 2.2rem;
 }
 
-main .recent-transactions .header {
+.recent-transactions .header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
 
-main .recent-transactions .header a {
+.recent-transactions .header a {
   display: flex;
   align-items: center;
   color: var(--color-primary);
 }
 
-main .recent-transactions .transaction {
+.recent-transactions .transaction {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -583,30 +590,30 @@ main .recent-transactions .transaction {
   transition: all 300ms ease;
 }
 
-main .recent-transactions .transaction:hover {
+.recent-transactions .transaction:hover {
   background: var(--color-white);
   cursor: pointer;
 }
 
-main .recent-transactions .transaction .service {
+.recent-transactions .transaction .service {
   display: flex;
   gap: 1rem;
 }
 
-main .recent-transactions .transaction .service .icon {
+.recent-transactions .transaction .service .icon {
   padding: var(--padding-2);
   border-radius: var(--border-radius-1);
   display: flex;
   align-items: center;
 }
 
-main .recent-transactions .card-details {
+.recent-transactions .card-details {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-main .recent-transactions .card-details .card {
+.recent-transactions .card-details .card {
   display: flex;
   width: 4.6rem;
   height: 3rem;
@@ -616,6 +623,40 @@ main .recent-transactions .card-details .card {
 }
 
 /* ============= MEDIA QUERIES FOR TABLETS =============== */
+@media screen and (max-width: 1500px) {
+  main {
+    grid-template-columns: 16em auto;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+
+  .show-desktop {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 16px auto;
+    padding: 0 8px;
+  }
+
+  .show-desktop .investments,
+  .show-desktop .recent-transactions {
+    width: 100%;
+  }
+
+  section.bottom-section .recent-transactions {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .show-desktop {
+    flex-direction: column;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   nav .search-bar {
     display: none;
@@ -686,7 +727,7 @@ main .recent-transactions .card-details .card {
     margin: 3rem 0 1rem;
   }
 
-  main section.right .recent-transactions {
+  main section.bottom .recent-transactions {
     margin-top: 3rem;
   }
 }
