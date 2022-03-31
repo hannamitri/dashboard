@@ -115,12 +115,12 @@ small {
 }
 
 .bg-primary {
-  background: var(--color-primary);
+  background: black;
   box-shadow: 0 0.8rem 0.8rem var(--color-primary-light);
 }
 
 .bg-danger {
-  background: var(--color-danger);
+  background: black;
   box-shadow: 0 0.8rem 0.8rem var(--color-danger-light);
 }
 
@@ -243,6 +243,10 @@ nav .profile-area .profile-photo {
   overflow: hidden;
 }
 
+.profile-photo img {
+  height: 100%;
+}
+
 nav .profile-area button {
   display: none;
 }
@@ -250,7 +254,7 @@ nav .profile-area button {
 /* ===================== ASIDE & SIDEBAR ===================== */
 main {
   display: grid;
-  grid-template-columns: 16em auto 30rem;
+  grid-template-columns: 5rem auto 23rem;
   gap: 2rem;
   width: 96%;
   margin: 1rem auto 4rem;
@@ -279,13 +283,13 @@ main aside .sidebar a {
 
 main aside .sidebar a span {
   font-size: 1.7rem;
-  margin-left: 3rem;
+  margin-left: 1rem;
   transition: all 300ms ease;
 }
 
 main aside .sidebar a.active {
   background: var(--color-white);
-  color: var(--color-primary);
+  color: black;
 }
 
 main aside .sidebar a.active:before {
@@ -293,11 +297,11 @@ main aside .sidebar a.active:before {
   width: 6px;
   height: 100%;
   position: absolute;
-  background: var(--color-primary);
+  background: black;
 }
 
 main aside .sidebar a:hover {
-  color: var(--color-primary);
+  color: black;
 }
 
 main aside .sidebar a:hover span {
@@ -360,8 +364,13 @@ main section.middle .cards {
   gap: 1.5rem;
 }
 
-main section.middle .cards .card {
-  background: linear-gradient(#ff796f, #bd261b);
+.bottom-section.hide-desktop {
+  margin-top: 70px;
+}
+
+main section.middle .cards .card,
+.hide-desktop .cards .card {
+  background: linear-gradient(#b3b3b3, #000000);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
   color: white;
@@ -369,42 +378,47 @@ main section.middle .cards .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 2rem 2rem var(--color-danger-light);
   transition: all 300ms ease;
   min-width: 22rem;
 }
 
-main section.middle .cards .card:nth-child(2) {
-  background: linear-gradient(#7f8191, #27282f);
+main section.middle .cards .card:nth-child(2),
+.hide-desktop .cards .card:nth-child(2) {
+  background: linear-gradient(#b3b3b3, #000000);
   box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 main section.middle .cards .card:nth-child(3) {
-  background: linear-gradient(#5d70ff, #5719c2);
+  background: linear-gradient(#b3b3b3, #000000);
   box-shadow: 0 2rem 2rem var(--color-primary-light);
 }
 
-main section.middle .cards .card:hover {
+main section.middle .cards .card:hover,
+.hide-desktop .cards .card:hover {
   box-shadow: none;
 }
 
-main section.middle .card .top {
+main section.middle .card .top,
+.hide-desktop .card .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-main section.middle .card .top .left {
+main section.middle .card .top .left,
+.hide-desktop .card .top .left {
   display: flex;
   gap: 0.5rem;
 }
 
-main section.middle .card .top .left h2 {
+main section.middle .card .top .left h2,
+.hide-desktop .card .top .left h2 {
   font-weight: 200;
   font-size: 1.4rem;
 }
 
-main section.middle .card .top .left img {
+main section.middle .card .top .left img,
+.hide-desktop .card .top .left img {
   width: 2.3rem;
   height: 2.3rem;
   border: 1px solid white;
@@ -412,26 +426,31 @@ main section.middle .card .top .left img {
   padding: 0.4rem;
 }
 
-main section.middle .card .top img.right {
+main section.middle .card .top img.right,
+.hide-desktop .card .top img.right {
   width: 3.5rem;
 }
 
-main section.middle .card .middle {
+main section.middle .card .middle,
+.hide-desktop .card .middle {
   display: flex;
   justify-content: space-between;
 }
 
-main section.middle .card .middle .chip {
+main section.middle .card .middle .chip,
+.hide-desktop .card .middle .chip {
   width: 3.5rem;
 }
 
-main section.middle .card .bottom {
+main section.middle .card .bottom,
+.hide-desktop .card .bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-main section.middle .card .bottom .right {
+main section.middle .card .bottom .right,
+.hide-desktop .card .bottom .right {
   display: flex;
   gap: 2rem;
 }
@@ -501,6 +520,36 @@ main .fast-payment .badge div {
   align-self: center;
 }
 
+.cards-icon-wrapper {
+  margin: 30px 0;
+}
+
+.card-icon > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.material-icons-sharp {
+  font-size: 28px;
+}
+
+.dark-theme .card-icon .icon.bg-white {
+  background-color: #131316;
+  color: white;
+}
+
+.dark-theme .service .bg-white {
+  background-color: #131316;
+  color: white;
+}
+
+.dark-theme .recent-transactions .header a {
+  color: white;
+}
+
 /* ==================== CANVAS ================ */
 
 canvas#chart {
@@ -518,6 +567,10 @@ canvas#chart {
 
 .show-desktop {
   display: none;
+}
+
+.bg-white {
+  background-color: white;
 }
 
 /* ==================== INVESTMENTS ================ */
@@ -563,6 +616,18 @@ section.bottom-section .investments .investment:hover {
   cursor: pointer;
 }
 
+.cards-icon-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 800px) {
+  .cards-icon-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* ==================== RECENT TRANSACTIONS ================ */
 
 .recent-transactions img {
@@ -576,15 +641,16 @@ section.bottom-section .investments .investment:hover {
 }
 
 .recent-transactions .header a {
+  color: #000000;
   display: flex;
   align-items: center;
-  color: var(--color-primary);
 }
 
 .recent-transactions .transaction {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   padding: 1.5rem var(--card-padding);
   border-radius: var(--card-border-radius);
   transition: all 300ms ease;
@@ -598,6 +664,7 @@ section.bottom-section .investments .investment:hover {
 .recent-transactions .transaction .service {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .recent-transactions .transaction .service .icon {
@@ -623,9 +690,9 @@ section.bottom-section .investments .investment:hover {
 }
 
 /* ============= MEDIA QUERIES FOR TABLETS =============== */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1300px) {
   main {
-    grid-template-columns: 16em auto;
+    grid-template-columns: 5rem auto;
   }
 
   .hide-desktop {
