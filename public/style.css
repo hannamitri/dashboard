@@ -536,18 +536,34 @@ main .fast-payment .badge div {
   font-size: 28px;
 }
 
+.dark-theme .material-icons-sharp {
+  color: #ddd;
+}
+
 .dark-theme .card-icon .icon.bg-white {
   background-color: #131316;
-  color: white;
+  color: #ddd;
 }
 
 .dark-theme .service .bg-white {
   background-color: #131316;
-  color: white;
+  color: #ddd;
 }
 
 .dark-theme .recent-transactions .header a {
-  color: white;
+  color: #ddd;
+}
+
+.dark-theme .bg-primary {
+  background-color: white;
+}
+
+.dark-theme .dark-logo {
+  display: none;
+}
+
+.dark-theme .light-logo {
+  display: block;
 }
 
 /* ==================== CANVAS ================ */
@@ -558,11 +574,6 @@ canvas#chart {
   margin-top: 2rem;
   border-radius: var(--card-border-radius);
   padding: var(--card-padding);
-}
-
-.bottom-section {
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .show-desktop {
@@ -704,7 +715,6 @@ section.bottom-section .investments .investment:hover {
     justify-content: space-between;
     gap: 20px;
     margin: 16px auto;
-    padding: 0 8px;
   }
 
   .show-desktop .investments,

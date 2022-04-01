@@ -17,6 +17,7 @@ new Chart(chart, {
       "Oct",
       "Nov",
     ],
+    backgroundColor: "#ff00ff",
 
     datasets: [
       {
@@ -25,6 +26,7 @@ new Chart(chart, {
           29374, 33537, 49631, 59095, 57828, 36684, 33572, 39974, 48847, 48116,
           61004,
         ],
+
         borderColor: "black",
         borderWidth: 2,
       },
@@ -43,7 +45,6 @@ new Chart(chart, {
     responsive: true,
   },
 });
-
 // show or hide sidebar
 const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
